@@ -1,0 +1,21 @@
+fig08x012<-function(){
+haireye<-matrix(data=c(94,16,10,7,17,14,14,26,84,29,54,119,20,5,15,68),
+nrow=4,ncol=4,byrow=TRUE,dimnames=list(c("Blond","Red","Brunette","Black"),
+c("Blue","Green","Hazel","Brown")))
+haireye<-t(haireye)
+#
+graphics.off()
+windows(width=4.5,height=4.5,pointsize=12)
+par(fin=c(4.45,4.45),pin=c(4.45,4.45),
+mai=c(0.85,0.85,0.25,0.25),xaxs="i")
+#
+barplot(haireye,xlab="Frequency",ylab="Hair Color",
+xlim=c(0,120),horiz=TRUE,beside=TRUE,space=c(0.2,1),
+col=gray.colors(4)[4:1],legend.text=FALSE)
+#
+legend(x=85,y=10,legend=c("Brown","Hazel","Green","Blue"),
+fill=gray.colors(4))
+#
+dev.copy2eps(file="fig08x012.eps")
+dev.copy2pdf(file="fig08x012.pdf")
+}

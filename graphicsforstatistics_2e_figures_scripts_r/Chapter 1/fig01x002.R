@@ -1,0 +1,19 @@
+fig01x002<-function(){
+names<-c("Epidermals","Dust Mites","Weeds","Grasses","Molds","Trees")
+prevs<-c(38.2,37.8,31.1,31.1,29.3,26.7)
+#
+graphics.off()
+windows(width=4.5,height=4.5,pointsize=12)
+par(fin=c(4.45,4.45),pin=c(4.45,4.45),mai=c(1.0,1.0,0.25,0.0))
+#
+barplot(prevs,space=0.5,names.arg=NULL,horiz=FALSE,axes=FALSE,ylim=c(0,50),
+ylab="Percent",col="black")
+#
+yy<-1.5*(1:length(prevs)-0.33)
+axis(2,tick=TRUE,xaxp=c(0,50,5))
+yy<-1.5*(1:length(prevs)-.375)
+axis(1,at=yy,labels=names,tck=0,tcl=0,col=1,las=3)
+#
+dev.copy2eps(file="fig01x002.eps",pointsize=12)
+dev.copy2pdf(file="fig01x002.pdf",pointsize=12,out.type="pdf")
+}
